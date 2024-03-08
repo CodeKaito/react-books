@@ -1,20 +1,23 @@
 import React from "react";
-import { Card } from "react-bootstrap"; // Import Card from react-bootstrap
+import Col from 'react-bootstrap/Col';
+import { Card } from "react-bootstrap";
 
 export default function BookCard({ book }) {
-  const { title, img, price, category } = book; // Use 'book' instead of 'props' and destructure correctly
+  const { title, img, price, category } = book;
   return (
-    <Card
-      style={{
-        width: "18rem",
-      }}
-    >
-      <Card.Img variant="top" src={img} />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>{category}</Card.Text>
-        <Card.Text>{`Price: $${price}`}</Card.Text> {/* Format the price */}
-      </Card.Body>
-    </Card>
+    <Col>
+      <Card
+        style={{
+          width: "100%", // Use 100% width of the column
+        }}
+      >
+        <Card.Img variant="top" src={img} />
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>{category}</Card.Text>
+          <Card.Text>{`Price: $${price}`}</Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
   );
 }
